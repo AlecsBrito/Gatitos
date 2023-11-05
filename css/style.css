@@ -1,0 +1,299 @@
+:root {
+	/* Cores */
+	--cor-de-fundo: #fdf2e6;
+	/* Define a cor de fundo da página */
+	--cor-borda: #ffc0cb;
+	/* Define a cor da borda */
+	--cor-botao: #f8e0f3;
+	/* Define a cor do botão */
+
+	/* Tamanhos */
+	--espaco-elementos: 0.5em;
+	/* Define o espaço entre os elementos */
+	--espaco-raio: 0.8em;
+	/* Define o espaço ao redor do botão */
+	--tamanho-borda: 0.4em;
+	/* Define o tamanho da borda */
+	--tamanho-fonte: 1em;
+	/* Define o tamanho da fonte */
+}
+
+:is(*, *::before, *::after) {
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+/* Estilos da página */
+body {
+	background: var(--cor-de-fundo);
+	/* Define a cor de fundo do corpo da página */
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+	font-size: var(--tamanho-fonte);
+	/* Define o tamanho da fonte do corpo da página */
+}
+
+main {
+	flex-direction: row;
+	/* Define a direção do fluxo de elementos dentro do main */
+}
+
+form {
+	width: 100%;
+	/* Define a largura de 100% da classe .full */
+}
+
+legend {
+	font-weight: bold;
+	/* Define o estilo da legenda */
+	padding: 0 1%;
+	/* Define o preenchimento interno da legenda */
+}
+
+input {
+	padding: 2%;
+	/* Define o preenchimento interno do input */
+}
+
+textarea {
+	height: 35vh;
+	/* Define a altura do textarea */
+	padding: 2%;
+	/* Define o preenchimento interno do textarea */
+	resize: none;
+	/* Impede o redimensionamento do textarea */
+}
+
+fieldset {
+	word-break: break-word;
+	/* Quebra de palavras longas em um fieldset */
+}
+
+:where(#closeModal) {
+	background: var(--cor-borda);
+	border-radius: var(--espaco-raio);
+	border: none;
+	text-align: center;
+}
+
+/* Modal */
+:modal {
+	background: var(--cor-de-fundo);
+	border: solid var(--tamanho-borda) var(--cor-borda);
+	border-radius: var(--espaco-raio);
+	margin: auto;
+	overflow: none;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+:modal::backdrop {
+	background: rgba(0, 0, 0, .3);
+}
+
+/* Campos */
+:is(.left-side, .right-side) {
+	background: var(--cor-de-fundo);
+	/* Define a cor de fundo da div .left-side */
+	height: 100vh;
+	/* Define a altura da div .left-side */
+}
+
+.left-side {
+	width: 30%;
+	/* Define a largura da div .left-side */
+	padding: 1%;
+	/* Define o preenchimento interno da div .left-side */
+}
+
+.right-side {
+	width: 70%;
+	/* Define a largura da div .right-side */
+	overflow: auto;
+	/* Adiciona uma barra de rolagem à div .right-side se houver conteúdo excedente */
+}
+
+.post-zone {
+	padding: 2%;
+	/* Define o preenchimento interno da div .post-zone */
+}
+
+/* bootstrap da vida */
+.image {
+	width: 70%;
+	/* Define a largura da classe .image */
+}
+
+.flex {
+	display: flex;
+	/* Define um elemento com display flex */
+}
+
+.gap {
+	gap: var(--espaco-elementos);
+	/* Define o espaço entre elementos da classe .gap */
+}
+
+.border {
+	border: solid var(--tamanho-borda) var(--cor-borda);
+	/* Define a borda da classe .border */
+	border-radius: var(--espaco-raio);
+	/* Define o raio da borda da classe .border */
+}
+
+.center {
+	align-items: center;
+	/* Centraliza verticalmente os elementos da classe .center */
+	justify-content: center;
+	/* Centraliza horizontalmente os elementos da classe .center */
+}
+
+.collumn {
+	flex-direction: column;
+	/* Define a direção do fluxo de elementos dentro da classe .collumn */
+}
+
+.button {
+	background: var(--cor-botao);
+	/* Define a cor de fundo da classe .button */
+	font-weight: bolder;
+	/* Define o peso da fonte para negrito da classe .button */
+}
+
+/* Rádio */
+.mic {
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	position: absolute;
+	top: 65%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+}
+
+.status {
+	background: var(--cor-borda);
+	border-radius: 15px;
+	width: 50%;
+	height: 15%;
+
+	position: absolute;
+	top: 40%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+}
+
+.usersList {
+	background: var(--cor-borda);
+	border-radius: 15px;
+	width: 20%;
+	height: 60%;
+	padding: 2% 1%;
+
+	position: absolute;
+	top: 50%;
+	left: 12%;
+	transform: translate(-50%, -50%);
+
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.roomSpace{
+	background: var(--background, #FDF2E6);
+	border-radius: 5px;
+	text-align: center;
+	width: fit-content;
+	padding: 2px 5px;
+	color: var(--font1, #767676);
+
+	position: absolute;
+	top: 0;
+	right: 10%;
+	transform: translateY(-40%);
+}
+
+.usersStatus {
+	background: var(--background, #FDF2E6);
+	border-radius: 15px;
+	padding: 5px;
+	text-align: center;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+	scrollbar-width: auto;
+	scrollbar-color: var(--cor-botao) var(--cor-de-fundo);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--cor-botao);
+	border-radius: 10px;
+	border: 3px solid var(--cor-borda);
+}
+
+/* Estilos da página em dispositivos com largura máxima de 540px */
+@media screen and (max-width: 950px) {
+	main {
+		flex-direction: column;
+	}
+
+	form legend {
+		display: none;
+	}
+
+	textarea {
+		/* flex-wrap: 1; */
+		height: 20vh;
+	}
+
+	:is(.left-side, .right-side) {
+		height: 0;
+		/* Define a altura da div .left-side */
+	}
+
+	.left-side .image {
+		width: 20%;
+		opacity: 0.5;
+
+		position: fixed;
+		top: 0;
+		right: 0;
+	}
+
+	.left-side {
+		order: 2;
+		width: 100%;
+		height: 20vh;
+
+		position: absolute;
+		bottom: 0;
+	}
+
+	.right-side {
+		order: 1;
+		width: 100%;
+		height: 55vh;
+	}
+
+	.image {
+		width: 10%;
+	}
+
+	.center {
+		justify-content: end;
+	}
+}
