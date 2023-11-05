@@ -1,2 +1,2 @@
 # Gatitos
-An chat project
+A chat project
