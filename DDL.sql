@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS baianitos ;
-USE baianitos;
+CREATE DATABASE IF NOT EXISTS gatitos ;
+USE gatitos;
 
 CREATE TABLE IF NOT EXISTS `chat` (
   `id` int NOT NULL AUTO_INCREMENT,
