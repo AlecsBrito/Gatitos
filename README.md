@@ -1,2 +1,0 @@
-# Gatitos
-A chat project
