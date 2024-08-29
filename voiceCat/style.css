@@ -1,0 +1,277 @@
+:root {
+	/* Cores */
+	--cor-de-fundo: #fdf2e6;
+	/* Define a cor de fundo da página */
+	--cor-borda: #ffc0cb;
+	/* Define a cor da borda */
+	--cor-botao: #f8e0f3;
+	/* Define a cor do botão */
+
+	/* Tamanhos */
+	--espaco-elementos: 0.5em;
+	/* Define o espaço entre os elementos */
+	--espaco-raio: 0.8em;
+	/* Define o espaço ao redor do botão */
+	--tamanho-borda: 0.4em;
+	/* Define o tamanho da borda */
+	--tamanho-fonte: 1em;
+	/* Define o tamanho da fonte */
+}
+
+:is(*, *::before, *::after) {
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+/* Estilos da página */
+body {
+	background: var(--cor-de-fundo);
+	/* Define a cor de fundo do corpo da página */
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+	font-size: var(--tamanho-fonte);
+	/* Define o tamanho da fonte do corpo da página */
+}
+
+/* Rádio */
+.mic {
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	position: absolute;
+	top: 65%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+}
+
+.status {
+	background: var(--cor-borda);
+	border-radius: 15px;
+	width: 50%;
+	height: 15%;
+	padding: 2%;
+	overflow: hidden;
+
+	position: absolute;
+	top: 40%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+}
+
+.status #mic {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.micSelect {
+	text-align: center;
+	border: solid 5px var(--cor-borda);
+	border-radius: var(--espaco-raio);
+	padding: 5px;
+	transition: .2s;
+
+	position: absolute;
+	top: 25%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+
+	/* for Firefox */
+	-moz-appearance: none;
+	/* for Chrome */
+	-webkit-appearance: none;
+}
+
+/* For IE10 */
+.micSelect::-ms-expand {
+	display: none;
+}
+
+.micSelect:focus {
+	border-radius: var(--espaco-raio) var(--espaco-raio) 0 0;
+}
+
+.micSelect:disabled {
+	pointer-events: none;
+	border-radius: var(--espaco-raio);
+}
+
+.usersList {
+	background: var(--cor-borda);
+	border-radius: 15px;
+	width: 20%;
+	height: 60%;
+	padding: 2% 1%;
+	font-weight: bolder;
+
+	position: absolute;
+	top: 50%;
+	left: 12%;
+	transform: translate(-50%, -50%);
+
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.usersList .op1 {
+	border: 2px solid red;
+}
+
+.roomSpace {
+	background: var(--background, #FDF2E6);
+	border-radius: 5px;
+	text-align: center;
+	width: fit-content;
+	padding: 2px 5px;
+	color: var(--font1, #767676);
+
+	position: absolute;
+	top: 0;
+	right: 10%;
+	transform: translateY(-40%);
+}
+
+.usersStatus {
+	background: var(--background, #FDF2E6);
+	border-radius: 15px;
+	padding: 5px;
+	text-align: center;
+}
+
+/* Estilos da página em dispositivos com largura máxima de 540px */
+@media screen and (max-width: 950px) {
+	main {
+		flex-direction: column;
+	}
+
+	form legend {
+		display: none;
+	}
+
+	textarea {
+		flex-wrap: 1;
+		height: 20vh;
+	}
+
+	.left-side .image {
+		width: 20%;
+		opacity: 0.8;
+
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+	.left-side {
+		order: 2;
+		width: 100%;
+		height: 10vh;
+
+		position: absolute;
+		bottom: 0;
+	}
+
+	.right-side {
+		order: 1;
+		width: 100%;
+		/* height: 55vh; */
+		height: 60vh;
+		padding-top: 10%;
+	}
+
+	.center {
+		justify-content: end;
+	}
+
+	.navbar {
+		width: 65%;
+		font-size: .8em;
+		gap: 5%;
+	}
+
+	img#shareButton {
+		width: 10%;
+		transform: scaleX(-1);
+
+		position: fixed;
+		top: 20px;
+		right: 10px;
+	}
+
+	dialog {
+		width: 100%;
+	}
+
+	.submitButton {
+		width: 10px;
+		transform: scaleX(-1);
+	}
+
+	.closeButton {
+		position: absolute;
+		right: 2.5%;
+		top: 5%;
+
+		display: flex;
+	}
+
+	.search img {
+		width: 10%;
+	}
+
+	.search input {
+		border: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	.roomsList {
+		width: 100%;
+		height: 50vh;
+		padding: 5px;
+		overflow-y: auto;
+
+		gap: 5px;
+	}
+
+	.roomsList a {
+		text-decoration: none;
+		/* font-weight: bold; */
+		color: var(--font1);
+	}
+
+	.room {
+		padding: 5px;
+		text-align: center;
+	}
+
+	.creator {
+		width: 100%;
+	}
+
+	.search,
+	.creator {
+		background: var(--background, #fff);
+		padding: 1% 4%;
+		text-align: center;
+
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.createRoom {
+		border: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	.creator .switch {
+		width: 100%;
+		padding: 2% 5%;
+		background: var(--background, #FDF2E6);
+	}
+}

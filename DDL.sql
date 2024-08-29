@@ -1,9 +1,21 @@
-CREATE DATABASE IF NOT EXISTS gatitos ;
+CREATE DATABASE IF NOT EXISTS gatitos;
+
 USE gatitos;
 
+CREATE TABLE IF NOT EXISTS `room` (
+	`roomId` int NOT NULL AUTO_INCREMENT,
+	`roomName` varchar(25) DEFAULT NULL,
+	`roomState` int(2) DEFAULT NULL,
+	`roomBirth` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`roomId`)
+) ENGINE=InnoDB;
+
 CREATE TABLE IF NOT EXISTS `chat` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(22) DEFAULT NULL,
-  `post` varchar(4096) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-)
+	`id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`roomId` int,
+	`username` varchar(22) DEFAULT NULL,
+	`post` varchar(4096) DEFAULT NULL,
+	`timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (`roomId`) REFERENCES `room` (`roomId`) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
